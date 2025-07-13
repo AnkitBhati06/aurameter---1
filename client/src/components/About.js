@@ -130,6 +130,31 @@ const About = () => {
             </div>
 
             <div className={`about-section ${inView ? 'fade-in-up' : ''}`}>
+              <div className="section-icon">🧑‍💼</div>
+              <h2>Founders</h2>
+              <div className="founders-grid">
+                <div className="founder-card">
+                  <h3>Nikhil Jha <span className="founder-role">Founder</span></h3>
+                  <ul className="founder-details">
+                    <li>Ex-Accenture</li>
+                    <li>Built Just Scroll</li>
+                    <li>Scaled Memsta services with 18 clients as founder</li>
+                  </ul>
+                </div>
+                <div className="founder-card">
+                  <h3>Ankit Bhati <span className="founder-role">Co-founder</span></h3>
+                  <ul className="founder-details">
+                    <li>IIITV Sophomore</li>
+                    <li>Hackathon Winner</li>
+                    <li>Ex-Allrounder.AI</li>
+                    <li>SSOS</li>
+                    <li>Open-source contributor</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div className={`about-section ${inView ? 'fade-in-up' : ''}`}>
               <div className="section-icon">🌍</div>
               <h2>Join the Movement</h2>
               <p>

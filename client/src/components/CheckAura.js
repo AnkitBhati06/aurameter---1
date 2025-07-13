@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react';
 import { useInView } from 'react-intersection-observer';
 import axios from 'axios';
 import './CheckAura.css';
+import html2canvas from 'html2canvas';
 
 const CheckAura = () => {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -11,6 +12,7 @@ const CheckAura = () => {
   const [error, setError] = useState(null);
   const fileInputRef = useRef(null);
   const [ref, inView] = useInView({ threshold: 0.1 });
+  const resultRef = useRef(null);
 
   const handleImageSelect = (event) => {
     const file = event.target.files[0];
@@ -87,6 +89,15 @@ const CheckAura = () => {
     } finally {
       setIsAnalyzing(false);
     }
+  };
+
+  const handleDownloadImage = async () => {
+    if (!resultRef.current) return;
+    const canvas = await html2canvas(resultRef.current, { backgroundColor: null, scale: 2 });
+    const link = document.createElement('a');
+    link.download = 'aurameter-aura-analysis.png';
+    link.href = canvas.toDataURL('image/png');
+    link.click();
   };
 
   const resetForm = () => {
@@ -166,59 +177,29 @@ const CheckAura = () => {
                 </div>
               </div>
             ) : (
-              <div className={`analysis-result ${inView ? 'fade-in-up' : ''}`}>
+              <div className={`analysis-result ${inView ? 'fade-in-up' : ''}`}
+                   ref={resultRef}
+                   style={{ maxWidth: 420, margin: '0 auto', borderRadius: 24, boxShadow: '0 8px 32px rgba(139,92,246,0.18)', background: 'linear-gradient(135deg,#181c2f 0%,#232946 100%)', padding: '2rem 1.5rem', position: 'relative' }}>
                 <div className="result-header">
-                  <h2>✨ Your Aura Analysis</h2>
-                  <p>Here's what your energy reveals about you</p>
+                  <h2 style={{ fontSize: '2rem', background: 'linear-gradient(90deg,#8b5cf6,#06b6d4)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', fontWeight: 800 }}>✨ Aurameter</h2>
+                  <p style={{ color: '#94a3b8', fontWeight: 500 }}>Your Aura Analysis</p>
                 </div>
-
                 <div className="result-content">
-                  <div className="compliment-card">
-                    <div className="compliment-icon">💫</div>
-                    <h3>Your Energy</h3>
-                    <p className="compliment-text">{analysisResult.compliment}</p>
+                  <div className="compliment-card" style={{ background: 'rgba(139,92,246,0.10)', borderRadius: 16, padding: '1.2rem', marginBottom: 16 }}>
+                    <div className="compliment-icon" style={{ fontSize: 32, marginBottom: 8 }}>💫</div>
+                    <h3 style={{ color: '#8b5cf6', fontWeight: 700, fontSize: 20, marginBottom: 8 }}>Your Energy</h3>
+                    <p className="compliment-text" style={{ color: '#fff', fontSize: 18, fontWeight: 500 }}>{analysisResult.compliment}</p>
                   </div>
-
-                  <div className="aura-points-card">
-                    <div className="points-icon">🌟</div>
-                    <h3>Aura Points</h3>
-                    <div className="points-display">
-                      <span className="points-number">{analysisResult.auraPoints}</span>
-                      <span className="points-label">points</span>
-                    </div>
-                    <div className="points-bar">
-                      <div 
-                        className="points-fill"
-                        style={{ width: `${(analysisResult.auraPoints / 50) * 100}%` }}
-                      ></div>
-                    </div>
-                  </div>
-
-                  <div className="aura-insights">
-                    <h3>What This Means</h3>
-                    <div className="insights-grid">
-                      <div className="insight-item">
-                        <span className="insight-icon">🧘‍♀️</span>
-                        <p>Your current energy level reflects your inner state</p>
-                      </div>
-                      <div className="insight-item">
-                        <span className="insight-icon">💚</span>
-                        <p>Higher points indicate positive, balanced energy</p>
-                      </div>
-                      <div className="insight-item">
-                        <span className="insight-icon">🔄</span>
-                        <p>Your aura changes with your mood and experiences</p>
-                      </div>
-                    </div>
+                  <div className="aura-points-card" style={{ background: 'rgba(6,182,212,0.10)', borderRadius: 16, padding: '1.2rem', marginBottom: 16, textAlign: 'center' }}>
+                    <div className="points-icon" style={{ fontSize: 32, marginBottom: 8 }}>🌟</div>
+                    <h3 style={{ color: '#06b6d4', fontWeight: 700, fontSize: 20, marginBottom: 8 }}>Aura Points</h3>
+                    <div className="points-display" style={{ fontSize: 32, fontWeight: 800, color: '#8b5cf6', marginBottom: 4 }}>{analysisResult.auraPoints}</div>
+                    <span className="points-label" style={{ color: '#94a3b8', fontWeight: 500 }}>points</span>
                   </div>
                 </div>
-
-                <div className="result-actions">
-                  <button onClick={resetForm} className="btn-secondary">
-                    🔄 Try Another Photo
-                  </button>
-                  <button className="btn-primary">
-                    📱 Share My Aura
+                <div style={{ textAlign: 'center', marginTop: 24 }}>
+                  <button onClick={handleDownloadImage} className="btn-primary" style={{ fontWeight: 700, fontSize: 18, padding: '0.8rem 2.2rem', borderRadius: 12 }}>
+                    📥 Download Result
                   </button>
                 </div>
               </div>

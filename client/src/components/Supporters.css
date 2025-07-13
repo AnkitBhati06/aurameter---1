@@ -275,80 +275,131 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  .supporters-page {
+    padding: 80px 0 40px;
+  }
   .supporters-header h1 {
-    font-size: 2.5rem;
-  }
-
-  .stats {
-    gap: 1.5rem;
-  }
-
-  .stat-item {
-    min-width: 120px;
-    padding: 1rem;
-  }
-
-  .stat-number {
     font-size: 2rem;
   }
-
+  .stats {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+  .stat-item {
+    min-width: unset;
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
   .supporters-grid {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 1.2rem;
   }
-
   .supporter-card {
-    padding: 1.5rem;
+    padding: 1rem;
+    border-radius: 14px;
   }
-
   .supporter-avatar {
     width: 60px;
     height: 60px;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
   }
-
+  .supporter-name {
+    font-size: 1.1rem;
+  }
+  .supporter-role {
+    font-size: 0.95rem;
+  }
+  .supporter-badge {
+    font-size: 0.7rem;
+    padding: 0.3rem 0.7rem;
+    top: 0.5rem;
+    right: 0.5rem;
+  }
   .join-section {
-    padding: 2rem;
+    margin-top: 2rem;
+    padding: 1rem;
   }
-
   .join-content h2 {
-    font-size: 2rem;
+    font-size: 1.2rem;
   }
-
-  .join-benefits {
-    grid-template-columns: 1fr;
+  .join-content p {
+    font-size: 1rem;
   }
-
   .join-actions {
     flex-direction: column;
-    align-items: center;
+    gap: 0.7rem;
+    margin-top: 1.2rem;
   }
-
-  .join-actions .btn-primary,
-  .join-actions .btn-secondary {
+  .btn-primary, .btn-secondary {
     width: 100%;
-    max-width: 300px;
+    min-width: unset;
+    font-size: 1rem;
+    padding: 0.9rem 0.5rem;
+    border-radius: 10px;
   }
 }
 
 @media (max-width: 480px) {
+  .supporters-page {
+    padding: 60px 0 20px;
+  }
   .supporters-header h1 {
-    font-size: 2rem;
+    font-size: 1.3rem;
   }
-
+  .supporters-header p {
+    font-size: 1rem;
+  }
   .stats {
-    flex-direction: column;
-    align-items: center;
+    gap: 0.5rem;
   }
-
   .stat-item {
-    width: 100%;
-    max-width: 200px;
+    font-size: 0.95rem;
+    padding: 1rem 0.5rem;
   }
-
+  .supporters-grid {
+    gap: 0.7rem;
+  }
+  .supporter-card {
+    padding: 0.7rem;
+    border-radius: 10px;
+  }
+  .supporter-avatar {
+    width: 44px;
+    height: 44px;
+    font-size: 1rem;
+    margin-bottom: 0.7rem;
+  }
+  .supporter-name {
+    font-size: 0.98rem;
+  }
+  .supporter-role {
+    font-size: 0.85rem;
+  }
   .supporter-badge {
-    position: static;
-    margin-top: 1rem;
-    justify-content: center;
+    font-size: 0.6rem;
+    padding: 0.2rem 0.5rem;
+    top: 0.3rem;
+    right: 0.3rem;
+  }
+  .join-section {
+    margin-top: 1.2rem;
+    padding: 0.5rem;
+  }
+  .join-content h2 {
+    font-size: 1rem;
+  }
+  .join-content p {
+    font-size: 0.95rem;
+  }
+  .join-actions {
+    gap: 0.5rem;
+    margin-top: 0.7rem;
+  }
+  .btn-primary, .btn-secondary {
+    font-size: 0.95rem;
+    padding: 0.7rem 0.2rem;
+    border-radius: 8px;
   }
 } 

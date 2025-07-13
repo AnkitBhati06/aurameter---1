@@ -7,6 +7,8 @@ import About from './components/About';
 import Privacy from './components/Privacy';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import CommunityGuidelines from './components/CommunityGuidelines';
+import ChildSafety from './components/ChildSafety';
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
         <Route path="/supporters" element={<Supporters />} />
         <Route path="/about" element={<About />} />
         <Route path="/privacy" element={<Privacy />} />
+        <Route path="/community-guidelines" element={<CommunityGuidelines />} />
+        <Route path="/child-safety" element={<ChildSafety />} />
       </Routes>
       <Footer />
     </div>

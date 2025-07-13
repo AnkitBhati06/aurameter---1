@@ -366,57 +366,117 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  .check-aura-page {
+    padding: 80px 0 40px;
+  }
   .aura-header h1 {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
-
-  .aura-form,
-  .analysis-result {
-    padding: 1.5rem;
+  .aura-form-container {
+    max-width: 100%;
+    margin: 0 auto 2rem;
+    padding: 0 0.5rem;
   }
-
+  .aura-form, .analysis-result {
+    padding: 1rem;
+    border-radius: 14px;
+  }
   .upload-area {
-    padding: 2rem 1rem;
+    padding: 2rem 0.5rem;
+    font-size: 1rem;
   }
-
   .image-preview {
-    height: 250px;
+    height: 180px;
   }
-
-  .result-content {
+  .result-header h2 {
+    font-size: 1.3rem;
+  }
+  .compliment-card, .aura-points-card {
+    padding: 0.7rem;
+    font-size: 1rem;
+  }
+  .aura-insights {
+    margin-top: 1.2rem;
+  }
+  .insights-grid {
     grid-template-columns: 1fr;
+    gap: 0.7rem;
   }
-
   .result-actions {
     flex-direction: column;
-    align-items: center;
+    gap: 0.7rem;
+    margin-top: 1.2rem;
   }
-
-  .result-actions .btn-primary,
-  .result-actions .btn-secondary {
+  .btn-primary, .btn-secondary {
     width: 100%;
-    max-width: 300px;
+    min-width: unset;
+    font-size: 1rem;
+    padding: 0.9rem 0.5rem;
+    border-radius: 10px;
   }
-
+  .aura-info {
+    padding: 1rem 0.2rem;
+  }
   .info-grid {
     grid-template-columns: 1fr;
+    gap: 0.7rem;
   }
 }
 
 @media (max-width: 480px) {
+  .check-aura-page {
+    padding: 60px 0 20px;
+  }
   .aura-header h1 {
-    font-size: 2rem;
+    font-size: 1.3rem;
   }
-
-  .upload-icon {
-    font-size: 3rem;
+  .aura-header p {
+    font-size: 1rem;
   }
-
-  .points-number {
-    font-size: 2.5rem;
+  .aura-form-container {
+    padding: 0 0.2rem;
+    margin-bottom: 1.2rem;
   }
-
-  .compliment-text {
+  .aura-form, .analysis-result {
+    padding: 0.7rem;
+    border-radius: 10px;
+  }
+  .upload-area {
+    padding: 1.2rem 0.2rem;
+    font-size: 0.95rem;
+  }
+  .image-preview {
+    height: 110px;
+  }
+  .compliment-card, .aura-points-card {
+    padding: 0.5rem;
+    font-size: 0.95rem;
+  }
+  .result-header h2 {
     font-size: 1.1rem;
+  }
+  .result-content {
+    gap: 0.5rem;
+  }
+  .aura-insights {
+    margin-top: 0.7rem;
+  }
+  .insights-grid {
+    gap: 0.5rem;
+  }
+  .result-actions {
+    margin-top: 0.7rem;
+    gap: 0.5rem;
+  }
+  .btn-primary, .btn-secondary {
+    font-size: 0.95rem;
+    padding: 0.7rem 0.2rem;
+    border-radius: 8px;
+  }
+  .aura-info {
+    padding: 0.5rem 0.1rem;
+  }
+  .info-grid {
+    gap: 0.5rem;
   }
 } 
