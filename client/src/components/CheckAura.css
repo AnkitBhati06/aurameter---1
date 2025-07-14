@@ -26,22 +26,7 @@
   margin-bottom: 3rem;
 }
 
-.aura-header h1 {
-  font-size: 3rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  background: linear-gradient(135deg, #fff 0%, #667eea 50%, #764ba2 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
 
-.aura-header p {
-  font-size: 1.2rem;
-  color: #ccc;
-  max-width: 600px;
-  margin: 0 auto;
-}
 
 .aura-form-container {
   max-width: 800px;
@@ -82,26 +67,7 @@
   color: #ccc;
 }
 
-.upload-icon {
-  font-size: 4rem;
-  margin-bottom: 1rem;
-}
 
-.upload-placeholder h3 {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
-  color: #fff;
-}
-
-.upload-placeholder p {
-  margin-bottom: 1rem;
-  color: #ccc;
-}
-
-.upload-hint {
-  font-size: 0.9rem;
-  color: #888;
-}
 
 .image-preview {
   position: relative;
@@ -178,139 +144,109 @@
 
 /* Analysis Result */
 .analysis-result {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border-radius: 20px;
-  padding: 2rem;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 1 / 1;
+  margin: 0 auto;
+  border-radius: 24px;
+  background: #181c2f;
+  border: 2px solid #232946;
+  box-shadow: 0 2px 12px rgba(24,28,47,0.10);
+  padding: 2.5rem 1.5rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: box-shadow 0.3s, border 0.3s, transform 0.2s;
+  overflow: hidden;
 }
-
+.analysis-result:hover {
+  box-shadow: 0 8px 24px 0 rgba(24,28,47,0.18);
+  border: 2px solid #8b5cf6;
+  transform: translateY(-4px) scale(1.025);
+}
 .result-header {
   text-align: center;
   margin-bottom: 2rem;
 }
-
-.result-header h2 {
+.result-title {
   font-size: 2rem;
-  font-weight: 700;
+  font-weight: 800;
+  color: #8b5cf6;
   margin-bottom: 0.5rem;
-  background: linear-gradient(135deg, #fff 0%, #667eea 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  letter-spacing: -0.01em;
 }
-
-.result-header p {
-  color: #ccc;
+.result-subtitle {
+  color: #94a3b8;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
 }
-
 .result-content {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 2rem;
   margin-bottom: 2rem;
-}
-
-.compliment-card,
-.aura-points-card {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 15px;
-  padding: 1.5rem;
-  text-align: center;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.compliment-icon,
-.points-icon {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-}
-
-.compliment-card h3,
-.aura-points-card h3 {
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
-  color: #fff;
-}
-
-.compliment-text {
-  font-size: 1.3rem;
-  font-weight: 600;
-  color: #667eea;
-  line-height: 1.4;
-}
-
-.points-display {
-  margin-bottom: 1rem;
-}
-
-.points-number {
-  font-size: 3rem;
-  font-weight: 700;
-  color: #fff;
-  display: block;
-}
-
-.points-label {
-  font-size: 1rem;
-  color: #ccc;
-}
-
-.points-bar {
   width: 100%;
-  height: 8px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 4px;
-  overflow: hidden;
 }
-
-.points-fill {
-  height: 100%;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  border-radius: 4px;
-  transition: width 1s ease;
-}
-
-.aura-insights {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 15px;
-  padding: 1.5rem;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.aura-insights h3 {
+.compliment-card, .aura-points-card {
+  background: #232946;
+  border-radius: 16px;
+  padding: 1.5rem 1.2rem;
   text-align: center;
+  border: 1.5px solid #2d3652;
+  box-shadow: 0 1px 4px 0 rgba(24,28,47,0.06);
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+.compliment-title, .points-title {
+  color: #8b5cf6;
+  font-weight: 700;
   font-size: 1.2rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.7rem;
+  letter-spacing: -0.01em;
+}
+.compliment-text {
   color: #fff;
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 0;
 }
-
-.insights-grid {
-  display: grid;
-  gap: 1rem;
+.aura-points-card {
+  background: #20243a;
 }
-
-.insight-item {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  padding: 0.5rem;
+.points-display {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #8b5cf6;
+  margin-bottom: 0.2rem;
 }
-
-.insight-icon {
-  font-size: 1.5rem;
-  flex-shrink: 0;
+.points-label {
+  color: #94a3b8;
+  font-weight: 500;
+  font-size: 1rem;
 }
-
-.insight-item p {
-  color: #ccc;
-  margin: 0;
-}
-
 .result-actions {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  flex-wrap: wrap;
+  text-align: center;
+  margin-top: 1.5rem;
+}
+.download-btn {
+  font-weight: 700;
+  font-size: 1.1rem;
+  padding: 0.8rem 2.2rem;
+  border-radius: 12px;
+}
+@media (max-width: 600px) {
+  .analysis-result {
+    padding: 1.5rem 0.5rem;
+    min-width: 0;
+    max-width: 100vw;
+    aspect-ratio: 1 / 1;
+  }
+  .compliment-card, .aura-points-card {
+    padding: 1rem 0.5rem;
+  }
 }
 
 /* Info Section */

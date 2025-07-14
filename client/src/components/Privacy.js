@@ -9,10 +9,10 @@ const Privacy = () => {
     <div className="privacy-page">
       <div className="container">
         <div className="privacy-content" ref={ref}>
-          <div className={`privacy-header ${inView ? 'fade-in-up' : ''}`}>
-            <h1>🔒 Privacy Policy</h1>
-            <p>Your privacy is our priority. Learn how we protect your data.</p>
-            <div className="last-updated">
+          <div className={`privacy-header text-center ${inView ? 'fade-in-up' : ''}`}>
+            <h1 className="display-2 mb-6">🔒 Privacy Policy</h1>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-4">Your privacy is our priority. Learn how we protect your data.</p>
+            <div className="text-caption text-gray-500">
               Last updated: {new Date().toLocaleDateString('en-US', { 
                 year: 'numeric', 
                 month: 'long', 
@@ -23,13 +23,13 @@ const Privacy = () => {
 
           <div className="privacy-sections">
             <div className={`privacy-section ${inView ? 'fade-in-up' : ''}`}>
-              <h2>📋 Overview</h2>
-              <p>
+              <h2 className="display-3 mb-6">📋 Overview</h2>
+              <p className="text-body-large mb-4">
                 At Aurameter, we believe that privacy is a fundamental human right. This Privacy Policy 
                 explains how we collect, use, and protect your personal information when you use our 
                 platform. We are committed to transparency and giving you control over your data.
               </p>
-              <p>
+              <p className="text-body-large">
                 By using Aurameter, you agree to the collection and use of information in accordance 
                 with this policy. We will not use or share your information with anyone except as 
                 described in this Privacy Policy.

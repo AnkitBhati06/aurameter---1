@@ -73,16 +73,21 @@ const LandingPage = () => {
             variants={staggerContainer}
           >
             <motion.h1 
-              className="hero-title"
+              className="display-1 gradient-text tracking-tighter"
               variants={fadeInUp}
             >
-              <span className="gradient-text">Aurameter</span>
-              <br />
-              <span className="subtitle-text">AI-Powered Social Energy</span>
+              Aurameter
             </motion.h1>
             
+            <motion.h2 
+              className="text-2xl font-light text-gray-300 tracking-wide mb-8"
+              variants={fadeInUp}
+            >
+              AI-Powered Social Energy
+            </motion.h2>
+            
             <motion.p 
-              className="hero-description"
+              className="text-body-large text-gray-300 max-w-2xl mb-10"
               variants={fadeInUp}
             >
               Discover your digital aura, connect with like-minded souls, and grow your energy through mindful interactions. 
@@ -134,8 +139,9 @@ const LandingPage = () => {
               onMouseLeave={handleMouseLeave}
             >
               <div className="phone-frame">
+                {/* Camera Notch */}
+                <div className="camera-notch"></div>
                 <div className="phone-screen">
-                  <div className="notification-badge">1</div>
                   <div className="app-interface">
                     <div className="app-header">
                       <div className="aura-icon">💜</div>
@@ -189,14 +195,14 @@ const LandingPage = () => {
       <section className="features-section">
         <div className="container">
           <motion.div 
-            className="section-header"
+            className="section-header text-center mb-16"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="section-title">Why Choose Aurameter?</h2>
-            <p className="section-subtitle">Experience social media reimagined for the conscious generation</p>
+            <h2 className="display-3 mb-6">Why Choose Aurameter?</h2>
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">Experience social media reimagined for the conscious generation</p>
           </motion.div>
 
           <div className="features-grid">
@@ -230,7 +236,25 @@ const LandingPage = () => {
                 icon: "🌱",
                 title: "Mindful Community",
                 description: "Join a community focused on personal growth and positive energy"
+              },
+              {
+                icon: "🕵️‍♂️",
+                title: "Real-Time Moderation",
+                description: "AI-powered moderation keeps the community safe and positive in real time."
+              },
+              {
+                icon: "🎨",
+                title: "Customizable Profiles",
+                description: "Express yourself with unique profile themes, avatars, and aura displays."
+              },
+            
+              {
+                icon: "🔗",
+                title: "Daily Vibe Challenges",
+                description: "Engage in fun, reflective challenges that boost your vibe and unlock bonus AuraPoints"
               }
+              
+              
             ].map((feature, index) => (
               <motion.div 
                 key={index}
@@ -241,9 +265,9 @@ const LandingPage = () => {
                 viewport={{ once: true }}
                 whileHover={{ y: -10, scale: 1.02 }}
               >
-                <div className="feature-icon">{feature.icon}</div>
-                <h3 className="feature-title">{feature.title}</h3>
-                <p className="feature-description">{feature.description}</p>
+                <div className="feature-icon text-4xl mb-4">{feature.icon}</div>
+                <h3 className="h4 mb-3">{feature.title}</h3>
+                <p className="text-body text-gray-300">{feature.description}</p>
               </motion.div>
             ))}
           </div>

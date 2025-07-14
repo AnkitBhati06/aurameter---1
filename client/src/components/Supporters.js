@@ -81,10 +81,10 @@ const Supporters = () => {
     return (
       <div className="supporters-page">
         <div className="container">
-          <div className="error-container">
-            <div className="error-icon">⚠️</div>
-            <h2>Oops! Something went wrong</h2>
-            <p>{error}</p>
+                      <div className="error-container text-center">
+              <div className="error-icon text-5xl mb-4">⚠️</div>
+              <h2 className="h2 mb-4">Oops! Something went wrong</h2>
+              <p className="text-body text-gray-300 mb-6">{error}</p>
             <button onClick={fetchSupporters} className="btn-primary">
               Try Again
             </button>
@@ -98,9 +98,9 @@ const Supporters = () => {
     <div className="supporters-page">
       <div className="container">
         <div className="supporters-content" ref={ref}>
-          <div className={`supporters-header ${inView ? 'fade-in-up' : ''}`}>
-            <h1>🌟 Early Beta Supporters</h1>
-            <p>Meet the amazing people who believed in Aurameter from the beginning</p>
+          <div className={`supporters-header text-center ${inView ? 'fade-in-up' : ''}`}>
+            <h1 className="display-2 mb-6">🌟 Early Beta Supporters</h1>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">Meet the amazing people who believed in Aurameter from the beginning</p>
             <div className="stats">
               <div className="stat-item">
                 <span className="stat-number">{supporters.length}</span>
@@ -159,9 +159,9 @@ const Supporters = () => {
           </div>
 
           <div className={`join-section ${inView ? 'fade-in-up' : ''}`}>
-            <div className="join-content">
-              <h2>Want to Join Our Community?</h2>
-              <p>Be among the first to experience the future of social media</p>
+            <div className="join-content text-center">
+              <h2 className="display-3 mb-6">Want to Join Our Community?</h2>
+              <p className="text-xl text-gray-300 mb-8">Be among the first to experience the future of social media</p>
               <div className="join-benefits">
                 <div className="benefit-item">
                   <span className="benefit-icon">🎯</span>

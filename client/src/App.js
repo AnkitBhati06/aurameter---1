@@ -10,6 +10,15 @@ import Footer from './components/Footer';
 import CommunityGuidelines from './components/CommunityGuidelines';
 import ChildSafety from './components/ChildSafety';
 
+// Marquee Ticker Component
+const MarqueeBar = () => (
+  <div className="footer-marquee">
+    <div className="footer-marquee__inner">
+      Aurameter: World's First AI-Driven Gamified Social Media
+    </div>
+  </div>
+);
+
 function App() {
   return (
     <div className="App">
@@ -23,6 +32,7 @@ function App() {
         <Route path="/community-guidelines" element={<CommunityGuidelines />} />
         <Route path="/child-safety" element={<ChildSafety />} />
       </Routes>
+      <MarqueeBar />
       <Footer />
     </div>
   );

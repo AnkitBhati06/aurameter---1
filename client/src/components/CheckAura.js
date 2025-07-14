@@ -114,9 +114,9 @@ const CheckAura = () => {
     <div className="check-aura-page">
       <div className="container">
         <div className="aura-content" ref={ref}>
-          <div className={`aura-header ${inView ? 'fade-in-up' : ''}`}>
-            <h1>🔮 Check Your Aura</h1>
-            <p>Upload a photo and discover your energy signature</p>
+          <div className={`aura-header text-center ${inView ? 'fade-in-up' : ''}`}>
+            <h1 className="display-2 mb-6">Check Your Aura</h1>
+            <p className="text-xl text-gray-300">Upload a photo and discover your energy signature</p>
           </div>
 
           <div className="aura-form-container">
@@ -137,10 +137,10 @@ const CheckAura = () => {
                     </div>
                   ) : (
                     <div className="upload-placeholder">
-                      <div className="upload-icon">📸</div>
-                      <h3>Upload Your Photo</h3>
-                      <p>Drag & drop or click to select an image</p>
-                      <span className="upload-hint">Supports JPG, PNG, GIF (max 5MB)</span>
+                      <div className="upload-icon text-5xl mb-4">📸</div>
+                      <h3 className="h3 mb-3">Upload Your Photo</h3>
+                      <p className="text-body text-gray-300 mb-2">Drag & drop or click to select an image</p>
+                      <span className="text-caption text-gray-500">Supports JPG, PNG, GIF (max 5MB)</span>
                     </div>
                   )}
                 </div>
@@ -171,35 +171,31 @@ const CheckAura = () => {
                         Analyzing Your Aura...
                       </>
                     ) : (
-                      '🔮 Analyze My Aura'
+                      'Analyze My Aura'
                     )}
                   </button>
                 </div>
               </div>
             ) : (
-              <div className={`analysis-result ${inView ? 'fade-in-up' : ''}`}
-                   ref={resultRef}
-                   style={{ maxWidth: 420, margin: '0 auto', borderRadius: 24, boxShadow: '0 8px 32px rgba(139,92,246,0.18)', background: 'linear-gradient(135deg,#181c2f 0%,#232946 100%)', padding: '2rem 1.5rem', position: 'relative' }}>
+              <div className={`analysis-result ${inView ? 'fade-in-up' : ''}`} ref={resultRef}>
                 <div className="result-header">
-                  <h2 style={{ fontSize: '2rem', background: 'linear-gradient(90deg,#8b5cf6,#06b6d4)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', fontWeight: 800 }}>✨ Aurameter</h2>
-                  <p style={{ color: '#94a3b8', fontWeight: 500 }}>Your Aura Analysis</p>
+                  <h2 className="result-title">Aurameter</h2>
+                  <p className="result-subtitle">Your Aura Analysis</p>
                 </div>
                 <div className="result-content">
-                  <div className="compliment-card" style={{ background: 'rgba(139,92,246,0.10)', borderRadius: 16, padding: '1.2rem', marginBottom: 16 }}>
-                    <div className="compliment-icon" style={{ fontSize: 32, marginBottom: 8 }}>💫</div>
-                    <h3 style={{ color: '#8b5cf6', fontWeight: 700, fontSize: 20, marginBottom: 8 }}>Your Energy</h3>
-                    <p className="compliment-text" style={{ color: '#fff', fontSize: 18, fontWeight: 500 }}>{analysisResult.compliment}</p>
+                  <div className="compliment-card">
+                    <h3 className="compliment-title">Your Energy</h3>
+                    <p className="compliment-text">{analysisResult.compliment}</p>
                   </div>
-                  <div className="aura-points-card" style={{ background: 'rgba(6,182,212,0.10)', borderRadius: 16, padding: '1.2rem', marginBottom: 16, textAlign: 'center' }}>
-                    <div className="points-icon" style={{ fontSize: 32, marginBottom: 8 }}>🌟</div>
-                    <h3 style={{ color: '#06b6d4', fontWeight: 700, fontSize: 20, marginBottom: 8 }}>Aura Points</h3>
-                    <div className="points-display" style={{ fontSize: 32, fontWeight: 800, color: '#8b5cf6', marginBottom: 4 }}>{analysisResult.auraPoints}</div>
-                    <span className="points-label" style={{ color: '#94a3b8', fontWeight: 500 }}>points</span>
+                  <div className="aura-points-card">
+                    <h3 className="points-title">Aura Points</h3>
+                    <div className="points-display">{analysisResult.auraPoints}</div>
+                    <span className="points-label">points</span>
                   </div>
                 </div>
-                <div style={{ textAlign: 'center', marginTop: 24 }}>
-                  <button onClick={handleDownloadImage} className="btn-primary" style={{ fontWeight: 700, fontSize: 18, padding: '0.8rem 2.2rem', borderRadius: 12 }}>
-                    📥 Download Result
+                <div className="result-actions">
+                  <button onClick={handleDownloadImage} className="btn-primary download-btn">
+                    Download Result
                   </button>
                 </div>
               </div>

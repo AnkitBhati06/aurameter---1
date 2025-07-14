@@ -27,7 +27,7 @@ const Navbar = () => {
     <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
       <div className="container">
         <Link to="/" className="navbar-brand">
-          <span className="brand-text">✨ Aurameter</span>
+          <span className="brand-text text-xl font-bold">✨ Aurameter</span>
         </Link>
 
         <div className={`navbar-menu ${isMobileMenuOpen ? 'active' : ''}`}>
@@ -45,7 +45,11 @@ const Navbar = () => {
 
         <button
           className={`mobile-menu-btn ${isMobileMenuOpen ? 'active' : ''}`}
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          onClick={() => {
+            const newState = !isMobileMenuOpen;
+            setIsMobileMenuOpen(newState);
+            console.log('Mobile menu open:', newState);
+          }}
         >
           <span></span>
           <span></span>
