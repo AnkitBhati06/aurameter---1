@@ -72,12 +72,23 @@ const LandingPage = () => {
             animate="animate"
             variants={staggerContainer}
           >
-            <motion.h1 
-              className="display-1 gradient-text tracking-tighter"
-              variants={fadeInUp}
+            <motion.div 
+              className="hero-badge"
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.1 }}
             >
-              Aurameter
-            </motion.h1>
+              <span className="badge-icon">⚡</span> World's First AI-Driven Gamified Social Media
+            </motion.div>
+            {/* Remove animated loader background behind Aurameter text */}
+            <div style={{position: 'relative', display: 'inline-block', textAlign: 'center'}}>
+              <motion.h1 
+                className="display-1 gradient-text tracking-tighter"
+                variants={fadeInUp}
+                style={{position: 'relative', zIndex: 1, textAlign: 'center', margin: 0}}>
+                Aurameter
+              </motion.h1>
+            </div>
             
             <motion.h2 
               className="text-2xl font-light text-gray-300 tracking-wide mb-8"

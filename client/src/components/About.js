@@ -117,7 +117,8 @@ const About = () => {
               <h2 className="display-3 mb-6">Meet the Founders</h2>
               <div className="founders-grid">
                 <div className="founder-card">
-                  <h3 className="h3 mb-3">Nikhil Jha <span className="text-secondary font-medium">Founder</span></h3>
+                  <div className="founder-name">Nikhil Jha</div>
+                  <div className="founder-title">Founder</div>
                   <ul className="founder-details text-body text-gray-300">
                     <li>Ex-Accenture</li>
                     <li>Built Just Scroll</li>
@@ -125,13 +126,14 @@ const About = () => {
                   </ul>
                 </div>
                 <div className="founder-card">
-                  <h3 className="h3 mb-3">Ankit Bhati <span className="text-secondary font-medium">Co-founder</span></h3>
+                  <div className="founder-name">Ankit Bhati</div>
+                  <div className="founder-title">Co-founder</div>
                   <ul className="founder-details text-body text-gray-300">
                     <li>IIITV Sophomore</li>
                     <li>Hackathon Winner</li>
                     <li>Ex-Allrounder.AI</li>
-                    <li>SSOS</li>
-                    <li>Open-source contributor</li>
+                    <li>SSOS- os contributor</li>
+                    
                   </ul>
                 </div>
               </div>

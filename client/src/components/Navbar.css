@@ -34,6 +34,16 @@
   background-clip: text;
 }
 
+.brand-logo {
+  height: 20px;
+  width: auto;
+  max-width: 25px;
+  margin-right: 0.6rem;
+  vertical-align: middle;
+  display: inline-block;
+  object-fit: contain;
+}
+
 .navbar-menu {
   display: flex;
   gap: 2rem;

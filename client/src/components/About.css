@@ -183,6 +183,24 @@
   margin-bottom: 0.3rem;
 }
 
+.founder-name {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.15em;
+  letter-spacing: 0.01em;
+}
+.founder-title {
+  display: block;
+  font-size: 1.02rem;
+  font-weight: 500;
+  color: #38bdf8;
+  margin-bottom: 0.7em;
+  letter-spacing: 0.01em;
+  text-transform: capitalize;
+  opacity: 0.85;
+}
+
 /* Responsive Design */
 @media (max-width: 900px) {
   .about-sections {

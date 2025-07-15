@@ -205,17 +205,17 @@ const CheckAura = () => {
           <div className={`aura-info ${inView ? 'fade-in-up' : ''}`}>
             <h3>How It Works</h3>
             <div className="info-grid">
-              <div className="info-item">
+              <div className="info-item" data-step="1">
                 <div className="info-icon">📸</div>
                 <h4>Upload Photo</h4>
                 <p>Share a clear photo of yourself</p>
               </div>
-              <div className="info-item">
+              <div className="info-item" data-step="2">
                 <div className="info-icon">🤖</div>
                 <h4>AI Analysis</h4>
                 <p>Our AI reads your energy signature</p>
               </div>
-              <div className="info-item">
+              <div className="info-item" data-step="3">
                 <div className="info-icon">✨</div>
                 <h4>Get Results</h4>
                 <p>Discover your aura and energy points</p>
